@@ -29,13 +29,13 @@ function Main() {
   return (
     <div className="main">
         <div className="nav">
-            <p>Gemini</p>
+            <p>Rafiq Gemini</p>
             <img src={assets.user_icon} alt=""  className='image'/>
         </div>
         <div className="main-container">
           {!showResult ? <>
             <div className="greet">
-            <p><span>Hell0, Dev.</span></p>
+            <p><span>Hello, Dev welcome....!</span></p>
             <p>How Can I help you today</p>
           </div>
           <div className="cards" >
