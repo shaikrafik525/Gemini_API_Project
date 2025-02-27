@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import './Main.css'
 import { assets } from '../../assets/assets'
 import { Context } from '../../Context/Context'
@@ -14,6 +14,18 @@ function Main() {
     setPrevPropmt((prev)=>[...prev,value])
      var res=  await onSent(value);
   }
+  const clickFn=(event)=>{
+    if(event.keyCode==13){
+      event.preventDefault()
+      onSent();
+    }
+  }
+  useEffect(()=>{
+    document.addEventListener('keydown',clickFn);
+    return ()=>{
+      document.removeEventListener('keydown',clickFn);
+    }
+  },[input])
   return (
     <div className="main">
         <div className="nav">
